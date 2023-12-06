@@ -7,7 +7,6 @@ import OtpInput from 'otp-input-react'
 import Image from "next/image";
 // 'react-otp-input';
 
-import { REGISTRATION_STEPS } from "../../../app/hospital-registration/page"
 // '@/app/hospital-registration/page';
 import { axiosInstance } from '../../../remote/axios';
 import ButtonPrimary from '../../buttons/buttonPrimary';
@@ -16,6 +15,13 @@ import ButtonPrimary from '../../buttons/buttonPrimary';
 import styles from './styles.module.scss';
 import hospitalStyles from './hospitalstyles.module.scss';
 
+const REGISTRATION_STEPS = {
+  PERSONAL_DETAILS: 0,
+  OTP: 1,
+  ABOUT_HOSPITAL: 2,
+  PERSONALISATION: 3,
+  CONTACT_HOURS: 4,
+};
 
 Otp.propTypes = {
   active: PropTypes.bool,
