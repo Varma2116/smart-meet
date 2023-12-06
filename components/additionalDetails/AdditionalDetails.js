@@ -53,7 +53,6 @@ function AdditionalDetails({
   setEmergencyContacts,
   setEditData,
 }) {
-  console.log("hello",editData);
   const {data : session} = useSession();
   const [loading,setLoading] = useState(false);
   const [emergencyChecked, setEmergencyChecked] = useState(false);

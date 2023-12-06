@@ -30,7 +30,6 @@ axiosInstance.interceptors.response.use(
         description: 'Please Check Your Internet Connection',
       });
     } else {
-      console.log("hello",err);
       // notification['error']({
       //   message: get(err, 'response.data.message', 'Something Went Wrong'),
       // });
