@@ -9,7 +9,7 @@ import ReviewBox from "@/components/reviewBox";
 import FaqBlock from "@/components/faqBlock";
 import { axiosInstance } from "@/remote/axios";
 import { getDoctorAddress } from "@/utilities/helpers";
-import { Media, Player, controls } from "react-media-player";
+// import { Media, Player, controls } from "react-media-player";
 import Image from "next/image";
 import openVideo from "./openVideo";
 const { PlayPause, MuteUnmute } = controls;
@@ -114,7 +114,7 @@ console.log("admoda",adModal);
                 {ad?.video?.key ? (
                   <div onClick={() => clickAd(ad)}>
                     <h3>{ad?.text}</h3>
-                    <Media>
+                    {/* <Media>
                       <div
                         className={styles["media"]}
                         style={{ cursor: "pointer" }}
@@ -127,7 +127,7 @@ console.log("admoda",adModal);
                           />
                         </div>
                       </div>
-                    </Media>
+                    </Media> */}
                     <Image alt=""
                       src={ad?.image?.url}
                       style={{ width: "100px", height: "70px" }}
@@ -157,7 +157,7 @@ console.log("admoda",adModal);
               >
                 <h1>{ad?.text}
                 </h1>
-                <Media>
+                {/* <Media>
                   <div className={styles["media"]} style={{ cursor: "pointer",width:"700px" }}>
                     <div className={styles["media-player"]}>
                       <Player src={ad?.video?.url} loop={true} autoPlay={true} />
@@ -167,7 +167,7 @@ console.log("admoda",adModal);
                       <MuteUnmute />
                     </div>
                   </div>
-                </Media>
+                </Media> */}
                 <Image src={ad?.image?.url} alt="ad Image" className={styles["ad-image"]} style={{width:"200px",height:"200px",marginTop:"12px"}} width={200}
           height={200}/>
               </Modal>

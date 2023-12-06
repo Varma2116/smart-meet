@@ -1,6 +1,6 @@
 import {  Modal } from "antd";
 import styles from "./styles.module.scss";
-import { Media, Player, controls } from "react-media-player";
+// import { Media, Player, controls } from "react-media-player";
 import Image from "next/image";
 const { PlayPause, MuteUnmute } = controls;
 
@@ -13,7 +13,7 @@ export default function openVideo({adModal,closeAdModal,ad}:any) {
       footer={null}
     >
       <h1>{ad?.text}</h1>
-      <Media>
+      {/* <Media>
         <div className={styles["media"]} style={{ cursor: "pointer" }}>
           <div className={styles["media-player"]}>
             <Player src={ad?.video?.url} loop={true} autoPlay={true} />
@@ -23,7 +23,7 @@ export default function openVideo({adModal,closeAdModal,ad}:any) {
             <MuteUnmute />
           </div>
         </div>
-      </Media>
+      </Media> */}
       <Image src={ad?.image?.url} alt="ad Image" className={styles["ad-image"]} width={10}
           height={10}/>
     </Modal>
