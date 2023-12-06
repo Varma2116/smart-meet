@@ -16,7 +16,7 @@ import styles from './styles.module.scss';
 export default function PrimarySearch(props) {
   const [opened, setOpened] = useState(false);
   const [address, setAddress] = useState('');
-  let google = {};
+  // let google = {};
 
   const onSearch = (value) => {
     props.searchQuery(value);
@@ -24,7 +24,7 @@ export default function PrimarySearch(props) {
   };
 
   useEffect(() => {
-    google = window.google = window.google ? window.google : {};
+    // google = window.google = window.google ? window.google : {};
   }, []);
 
   const handleAddressSelect = async (value) => {
