@@ -1,3 +1,4 @@
+"use client"
 import { notification, message } from 'antd';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
@@ -21,22 +22,22 @@ const REGISTRATION_STEPS = {
   CONTACT_HOURS: 4,
 };
 
-Otp.propTypes = {
-  active: PropTypes.bool,
-  clickHandler: PropTypes.func,
-  otp: PropTypes.any,
-  data: PropTypes.any,
-  errors: PropTypes.any,
-  onChange: PropTypes.any,
-  onClickBack: PropTypes.any,
-  completeData: PropTypes.any,
-};
+// Otp.propTypes = {
+//   active: PropTypes.bool,
+//   clickHandler: PropTypes.func,
+//   otp: PropTypes.any,
+//   data: PropTypes.any,
+//   errors: PropTypes.any,
+//   onChangeFormDatafn: PropTypes.any,
+//   onClickBack: PropTypes.any,
+//   completeData: PropTypes.any,
+// };
 
 export default function Otp(props) {
-  const { active, data, onChange, completeData, onClickBack } = props;
+  const { active, data, onChangeFormDatafn, completeData, onClickBack } = props;
 
   const onChangeOtp = (key, value) => {
-    onChange({ ...data, [key]: value });
+    onChangeFormDatafn({ ...data, [key]: value });
   };
 
   const handleResendCode = async () => {
@@ -65,24 +66,15 @@ export default function Otp(props) {
             We have sent a 4-digit verification code to your email address{' '}
             {completeData[REGISTRATION_STEPS.PERSONAL_DETAILS].email}
           </div>
-          <Form.Item
-              name="otp"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
           <div className={styles["otp-box"]}>
             {/* <Form.Item validateStatus={!props.errors.otp ? "validating" : "error"} help={props.errors.otp}> */}
-            <OtpInput
+            {/* <OtpInput
               value={data?.otp}
               onChange={(value) => onChangeOtp('otp', value)}
               inputCount={6}
-            />
+            /> */}
             {/* </Form.Item> */}
           </div>
-          </Form.Item>
 
           <div className={styles["other-link-section"]}>
             <div className={styles["description sm"]}>
