@@ -122,7 +122,6 @@ function AdditionalDetails({
         lat = latLng?.lat;
         lng = latLng?.lng;
       }
-    console.log("position*1212*", position, lat,lng,window);
 
       geocodeByLatLng({
         lat: lat,
