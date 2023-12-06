@@ -12,7 +12,7 @@ import { getDoctorAddress } from "@/utilities/helpers";
 // import { Media, Player, controls } from "react-media-player";
 import Image from "next/image";
 import openVideo from "./openVideo";
-const { PlayPause, MuteUnmute } = controls;
+// const { PlayPause, MuteUnmute } = controls;
 
 const { TabPane } = Tabs;
 
