@@ -2,7 +2,7 @@ import {  Modal } from "antd";
 import styles from "./styles.module.scss";
 // import { Media, Player, controls } from "react-media-player";
 import Image from "next/image";
-const { PlayPause, MuteUnmute } = controls;
+// const { PlayPause, MuteUnmute } = controls;
 
 export default function openVideo({adModal,closeAdModal,ad}:any) {
   return (
