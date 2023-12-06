@@ -126,7 +126,7 @@ export default function HospitalRegistration() {
   };
 
   const handleDashboard = () => {
-    window.location.replace("https://staging-admin.smartmeet.au/");
+    router.replace("https://staging-admin.smartmeet.au/");
   };
 
   const handleClick = (e: any) => {

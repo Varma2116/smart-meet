@@ -8,7 +8,7 @@ import Image from "next/image";
 import React from "react";
 
 export default function RecoverPassword(props: any) {
-  const url =  new URL(window.location.href);
+  const url =  new URL(document.location.href);
   const [loading, setLoading] = useState(false);
   console.log("searchParams", url.searchParams.get("userid"));
   const [value, setValue] = useState(1);

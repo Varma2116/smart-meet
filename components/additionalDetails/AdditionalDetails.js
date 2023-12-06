@@ -116,7 +116,6 @@ function AdditionalDetails({
   };
   
   function showPosition(position) {
-    console.log("position**", position, latLng,window);
     if (position?.coords?.latitude && window) {
       let lat = position?.coords?.latitude;
       let lng = position?.coords?.longitude;
