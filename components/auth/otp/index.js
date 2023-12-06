@@ -1,9 +1,7 @@
-"use client";
-import { notification,message } from 'antd';
+import { notification, message } from 'antd';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import OtpInput from 'otp-input-react'
+import OtpInput from 'react-otp-input'
 import Image from "next/image";
 // 'react-otp-input';
 
@@ -26,12 +24,12 @@ const REGISTRATION_STEPS = {
 Otp.propTypes = {
   active: PropTypes.bool,
   clickHandler: PropTypes.func,
-  otp : PropTypes.any,
-  data : PropTypes.any,
+  otp: PropTypes.any,
+  data: PropTypes.any,
   errors: PropTypes.any,
-  onChange : PropTypes.any,
-  onClickBack : PropTypes.any,
-  completeData : PropTypes.any,
+  onChange: PropTypes.any,
+  onClickBack: PropTypes.any,
+  completeData: PropTypes.any,
 };
 
 export default function Otp(props) {
@@ -60,24 +58,31 @@ export default function Otp(props) {
         <div>
           <div className={hospitalStyles["logo"]}>
             <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-          height={10}/>
+              height={10} />
           </div>
           <h3 className={hospitalStyles["title3"]}>Please verify your email</h3>
           <div className={hospitalStyles["info"]}>
             We have sent a 4-digit verification code to your email address{' '}
             {completeData[REGISTRATION_STEPS.PERSONAL_DETAILS].email}
           </div>
+          <Form.Item
+              name="otp"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
           <div className={styles["otp-box"]}>
             {/* <Form.Item validateStatus={!props.errors.otp ? "validating" : "error"} help={props.errors.otp}> */}
             <OtpInput
               value={data?.otp}
               onChange={(value) => onChangeOtp('otp', value)}
-              // numInputs={4}
               inputCount={6}
-              // separator={<span>-</span>}
             />
             {/* </Form.Item> */}
           </div>
+          </Form.Item>
 
           <div className={styles["other-link-section"]}>
             <div className={styles["description sm"]}>
