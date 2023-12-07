@@ -134,13 +134,14 @@ export default function FavoritesSection() {
 
   }
   const clickAppointment = async (data: any) => {
-    console.log("data");
     const hospitalData = `${backendUrl}/hospital/${data?.doctor?.id}/doctor`;
     await axios
       .get(hospitalData)
       .then((res) => {
         const slugName = res?.data?.data?.hospitals?.slug;
-        router.push(`/hospital/${slugName}/doctor/${data?.doctor?.uuid}`);
+        if(slugName && data?.doctor?.uuid){
+          window.location.href = window.location.origin + `/hospital/${slugName}/doctor/${data?.doctor?.uuid}`;
+        }
       })
       .catch((err) => {
         console.log(err);
